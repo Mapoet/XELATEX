@@ -3,7 +3,11 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{graphicx}
-%\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{epstopdf}
+\usepackage{flafter}
+\usepackage{multirow}
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit}
 \usetikzlibrary{calc,through,backgrounds}
@@ -449,11 +453,31 @@ $R$为空间曲率标量，$g_{\mu \nu}$为四维时空的度规张量，$T_{\mu
 $\Gamma_{\mu \nu}^\lambda$为仿射联络，决定引力场。我们用几何的方式可以把运动方程表述为：
 在称为引力场的弯曲时空中一个自由降落的指点将沿着两点间最短可能的路径运动，"长度"由原时来度量的。这样的路径称为测地线。
 \section{Method}
+
+\begin{figure}
+\small
+\centering
+\includegraphics[height=100pt]{Sphere.png}
+\caption{地球，如图为地球，其中大圈表示卫星轨道。}
+\label{3}
+\end{figure}
+
+
+%\par \includegraphics[height=100pt]{Sphere.png}
 \par 为了描述相对论下引力$N$体问题，我们需要引入$N+1$个坐标系：
 一个全局坐标系$x^\mu=(ct,x^i)$，
 其中包含了所有$N$个引力体并且可以用来描述全局的动力学[1-4]；
 另外还有$N$个局部坐标系$X^\alpha=(cT_A,X_A^α),A=1,...,N$，这里坐标系$X_A^\alpha$
 被假设随天体$A$一起运动。
+\par \begin{wrapfigure}{r}{0.5\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{Sphere.png}
+  \end{center}
+  \vspace{-20pt}
+  \caption{地球，如图为地球，其中大圈表示卫星轨道。}
+  \vspace{-10pt}
+\end{wrapfigure}
 在本文中，大部分情况下，全局坐标系$\Sigma_glob$指BCRS[5]（barycentric celestial reference system，
 一个以太阳质心为坐标原点的坐标，适用于整个太阳系范围），
 局部坐标系$\Sigma_loc$指GCRS[6]（geocentric celestial reference system，
