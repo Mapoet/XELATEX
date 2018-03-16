@@ -1,0 +1,81 @@
+\let\nofiles\relav
+\documentclass{article}
+%\documentclass{ctexart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{enumitem}
+%\usepackage{multirow}
+\usepackage{tikz}
+\def\degree{{}^{\circ}}
+\usepackage[numbers]{natbib}
+\begin{document}
+\title{Imaging the Ionosphere by Assimilating Observations From Multi Sources/Platform and Error Sources Analysis}
+\author{Naifeng Fu |SHAO\vspace{-2cm}}
+% \thanks{nffu@shao.ac.cn}\\
+% \and Peng Guo\\SHAO\vspace{-2cm}\\
+% \and Menjie Wu\\SHAO\vspace{-2cm}\\
+% \and Xiaogong Hu\\SHAO\vspace{-2cm}\\
+% }
+
+\maketitle
+%\tableofcontents
+
+\begin{abstract}
+%\ref{abstract}
+\par In this paper, using the IRI~\cite{Bilitza07} model as the real field, the ionosphere observation data of the GNSS-IGS station on May 6, 2016 was simulated. With the Nequick~\cite{Nava08} model as the background field, the $ 2.5 \degree \times 5 \degree \times 13 layer \times 1h$ of the global ionospheric density field was constructed by the KF filter algorithm, and the following work was processed : 1. Analyzed various errors and influences in the ionosphere inversion, especially the easily overlooked errors, and proposed and verified the corresponding improvement methods; 2 The effects of multi-system data and multi-source data observations on the observation quality and spatial distribution configuration in ionospheric inversion are analyzed.
+\newline
+\textbf{Keywords:} data assimilation,GNSS ,COSMIC,electron density,radio occultation.
+\end{abstract}
+\section{Introduction}
+% exist problem
+\par In 2013,Ludger ,etc. telled that ...~\cite{Galindo13}, telling that the opinion~\cite{Ludger09} of Ludger developed at 2009 is incorrect.
+\section{Data}
+
+%
+\subsection{Satellite constellation and Stations}
+
+\subsection{Ionospheric empirical models}
+
+\subsection{Observing systems}
+
+\section{Method}
+
+\subsection{the Reconstruction Model}
+%
+\par The main Kalman filter equation that we described is as follows:
+\begin{equation}\label{e:Kalman filter}
+ X_a=X_b+P_{ne} H^t[\lambda^2 H P_{ne} H^t +R_{obs}]^{-1}(Y-HX_b)
+\end{equation}
+where $X_b$ and $X_a$ are the prior and assiminated electron densities,respectively. $P_{ne}$ and $R_{obs}$ are the error covariances
+of the background model and observations, respectively. $H$ is the observation matrix and and $Y$ is the observation vector.
+\subsection{the Error Sources and the Error Classification}
+\par Kalman filter Function[~\ref{e:Kalman filter}] with the order of the observation number.
+\subsubsection{The Influence of the Inversion Algorithm's Error}
+% \lambda -> setting
+% obscov/modelcov
+\subsubsection{The Influence of the Model Assumption's Error}
+\par three factors is showed as follow:\\
+\midskip
+\begin(itemize)
+\item[-] The influence and correction of The top ionosphere and plasma layer\\
+\item[-] The influence and correction of the ionospheric time variations\\
+\item[-] The influence and correction of the ionospheric grid representation\\
+\end(itemize)
+\subsection{The Role of the Multi-constellation and Multi-observation Systems}
+\section{Result}
+
+\subsection{The Improvement of the Multi-constellation and Multi-observation Systems}
+
+\subsection{The Improvement of the Corrections Above}
+
+\section{Conclusion}
+
+
+
+ \bibliographystyle{plain}
+ \bibliography{paperref}
+
+\end{document}
