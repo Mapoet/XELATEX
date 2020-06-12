@@ -1,0 +1,48 @@
+%% 文档更新类型
+%% `MTRACY' style v0.1 for LaTeX 2e
+%% 版权 付乃锋 2020-年
+%% Copyright (C) Naifeng Fu 2020-
+%%
+%% for LaTeX version 2E, by Leslie Lamport
+%% `MTRACY' 类型主要是用于文章修改与更新
+%% use method:
+%% \usepackage{mTracy} : no tracy
+%% \usepackage[tracy]{mTracy} with tracy
+%% Functions :
+%%     \mAWd{A}      添加文字
+%%     \mDWd{D}      删除文字
+%%     \mRWd{C1}{C2} 替换文字
+
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{mTracy}
+  [2020/06/12 v0.1i %
+  mTracy links for LaTeX]
+  
+\newif\ifmtracy@tracy   \mtracy@tracyfalse
+\DeclareOption{tracy}{\newif\ifmtracy@tracy   \mtracy@tracytrue}
+\DeclareOption*{\newif\ifmtracy@tracy   \mtracy@tracyfalse}
+\ProcessOptions\relax
+
+\RequirePackage{color,ulem}
+
+\ifmtracy@tracy
+    \newcommand{\addColor}{blue}
+    \newcommand{\delColor}{red}
+    \newcommand{\mcW}[2]{{\color{#1} #2}}
+    \newcommand{\mDWd}[1]{{\mcW{\delColor}{\sout{#1}}}}
+    \newcommand{\mAWd}[1]{{\mcW{\addColor}{\uwave{#1}}}}
+    \newcommand{\mRWd}[2]{{\mDWd{#1}\mAWd{#2}}}
+    \newcommand{\mAW}[2]{{\mcW{#1}{\uwave{#2}}}}
+    \newcommand{\mDW}[2]{{\mcW{#1}{\sout{#2}}}}
+    \newcommand{\mRW}[4]{{\mDW{#1}{#2}\mAW{#3}{#4}}}
+\else
+    \newcommand{\addColor}{black}
+    \newcommand{\delColor}{black}
+    \newcommand{\mcW}[2]{{\color{#1} #2}}
+    \newcommand{\mDWd}[1]{{\mcW{\delColor}{\sout{}}}}
+    \newcommand{\mAWd}[1]{{\mcW{\addColor}{{#1}}}}
+    \newcommand{\mRWd}[2]{{\mDWd{}\mAWd{#2}}}
+    \newcommand{\mAW}[2]{{\mcW{#1}{{#2}}}}
+    \newcommand{\mDW}[2]{{\mcW{#1}{\sout{}}}}
+    \newcommand{\mRW}[4]{{\mDW{#1}{}\mAW{#3}{#4}}}
+\fi
